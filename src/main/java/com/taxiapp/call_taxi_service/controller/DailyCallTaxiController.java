@@ -31,6 +31,7 @@ public class DailyCallTaxiController {
     @PostMapping("/createentry")
     public ResponseEntity<?> addDailyTaxiDetails(@RequestBody DailyCallTaxi details) {
         logger.info("<<< Invoke addDailyTaxiDetails >>>");
+        System.out.println("This is addDailyTaxiDetails() method");
         Map<String, Object> response = new HashMap<>();
         if (details.getVehicleNo() == null || details.getVehicleNo().isEmpty()) {
             throw new IllegalArgumentException("Vehicle number cannot be empty");
