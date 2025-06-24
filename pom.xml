@@ -124,6 +124,7 @@
 
 
     <build>
+	<finalName>call-taxi-service</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
