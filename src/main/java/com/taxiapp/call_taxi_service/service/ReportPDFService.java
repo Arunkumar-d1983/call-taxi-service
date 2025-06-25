@@ -93,11 +93,12 @@ public class ReportPDFService {
             table.addCell(dailyTaxi.getVehicleNo());
             table.addCell(dailyTaxi.getDriver());
             table.addCell(dailyTaxi.getTripDetails());
-            table.addCell(String.valueOf("600.0"));
+            table.addCell(String.valueOf(dailyTaxi.getAmount()));
+            totalAmount += dailyTaxi.getAmount(); // Sum for this Total Amount
             globalSeqNo++;
         }
         table.addCell(new Cell(1, 5).add(new Paragraph(" Total : ").setBold()));
-        totalAmount = 600 * dailyTaxis.size(); // Sum for this Total Amount
+        // totalAmount = 600 * dailyTaxis.size(); // Sum for this Total Amount
         table.addCell(new Cell().add(new Paragraph(String.valueOf(totalAmount)).setBold()));
         document.add(table);
         document.close();

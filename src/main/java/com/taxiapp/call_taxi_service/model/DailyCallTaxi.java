@@ -23,15 +23,19 @@ public class DailyCallTaxi {
     @Column(nullable = false, length = 500)
     private String tripDetails;
 
+    @Column(name = "amount", nullable = false)
+    private Double amount;
+
     // Constructors
     public DailyCallTaxi() {
     }
 
-    public DailyCallTaxi(String vehicleNo, Date date, String driver, String tripDetails) {
+    public DailyCallTaxi(String vehicleNo, Date date, String driver, String tripDetails, Double amount) {
         this.vehicleNo = vehicleNo;
         this.date = date;
         this.driver = driver;
         this.tripDetails = tripDetails;
+        this.amount = amount;
     }
 
     // Getters & Setters
@@ -75,9 +79,18 @@ public class DailyCallTaxi {
         this.tripDetails = tripDetails;
     }
 
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
     @Override
     public String toString() {
         return "DailyCallTaxi [seq=" + seq + ", vehicleNo=" + vehicleNo + ", date=" + date + ", driver=" + driver
-                + ", tripDetails=" + tripDetails + "]";
+                + ", tripDetails=" + tripDetails + ", amount=" + amount + "]";
     }
+
 }
